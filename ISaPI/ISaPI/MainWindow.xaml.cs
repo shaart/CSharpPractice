@@ -24,5 +24,10 @@ namespace ISaPI
         {
             InitializeComponent();
         }
+
+        private void Enter_Click(object sender, RoutedEventArgs e)
+        {
+            Code.Console.ProcessInput(ref _Console, _Input.Text);
+        }
     }
 }
