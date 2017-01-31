@@ -1,11 +1,11 @@
-﻿<Window x:Class="ISaPI.MainWindow"
+﻿<Window x:Class="ISaPI.ConsoleWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ISaPI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Shaarty ISaPI Console" Height="350" Width="525">
     <Grid>
         <TextBox x:Name="_Console"  Margin="5,5,5,40" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" IsUndoEnabled="False"/>
         <TextBox x:Name="_Input" Margin="5,5,55,5" Height="30" 
