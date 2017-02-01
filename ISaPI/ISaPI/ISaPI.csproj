@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainConsole.xaml">
+    <Page Include="ConsoleWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -66,8 +66,8 @@
     <Compile Include="Code\MyConsole.cs" />
     <Compile Include="Code\Encrypting\Caesar.cs" />
     <Compile Include="Code\TextBoxStreamWriter.cs" />
-    <Compile Include="MainConsole.xaml.cs">
-      <DependentUpon>MainConsole.xaml</DependentUpon>
+    <Compile Include="ConsoleWindow.xaml.cs">
+      <DependentUpon>ConsoleWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
