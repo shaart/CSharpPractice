@@ -22,7 +22,7 @@ namespace CSharpPractice
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            Code.AppConsole.ProcessInput(_Input.Text);
+            Code.AppConsole.RunCommand(_Input.Text);
             _Input.Text = "";
         }
 
