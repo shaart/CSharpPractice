@@ -25,5 +25,10 @@ namespace CSharpPractice
             Code.AppConsole.ProcessInput(_Input.Text);
             _Input.Text = "";
         }
+
+        private void _Console_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            _Console.ScrollToEnd();
+        }
     }
 }
