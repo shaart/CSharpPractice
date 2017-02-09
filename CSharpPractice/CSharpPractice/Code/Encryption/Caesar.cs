@@ -6,15 +6,16 @@ using System.Linq;
 
 namespace CSharpPractice.Code.Encryption
 {
-    public static class Caesar
+    public class Caesar
     {
         #region STRINGS
-        public const string CommandUsageInfo = 
-            // 4 params:                    0               1           2           3
-            "Command usage: caesar [(e)ncrypt/(d)ecrypt] <offset> [input_file] [output_file]\n" +
+        /// <summary>
+        /// Command usage and parameters information
+        /// </summary>
+        public const string CommandUsageInfo =
+            // 4 params:                            0        1           2           3
+            "Command usage: [(e)ncrypt/(d)ecrypt] caesar <offset> [input_file] [output_file]\n" +
             "Parameters: \n" +
-            "   encrypt (e)     Encryption parameter.\n" +
-            "   decrypt (d)     Decryption parameter.\n" +
             "   <offset>        Number. Key of encryption.\n" +
             "   input_file      Path to original file.\n" +
             "   output_file     Optional parameter. Path to result file.\n" +
@@ -68,8 +69,11 @@ namespace CSharpPractice.Code.Encryption
         /// Processing command arguments and starts appropriate process
         /// </summary>
         /// <param name="args">command arguments</param>
+        /// <exception cref="ArgumentException">Thrown "Not enough parameters", "Incorrect parameters"</exception>
         public static void Execute(IEnumerable<string> args)
         {
+            throw new Exception("Doesn't work. In developing");
+
             #if DEBUG
             Console.Write("Caesar with args: ");
             foreach (var arg in args)
@@ -87,7 +91,7 @@ namespace CSharpPractice.Code.Encryption
                 }
                 else
                 {
-                    throw new Exception(EXCEPTION_MESSAGE_NOT_ENOUGH_PARAMETERS);
+                    throw new ArgumentException(EXCEPTION_MESSAGE_NOT_ENOUGH_PARAMETERS);
                 }
             }
 
@@ -103,7 +107,7 @@ namespace CSharpPractice.Code.Encryption
                     isEncrypt = false;
                     break;
                 default:
-                    throw new Exception(EXCEPTION_MESSAGE_INCORRECT_PARAMETERS);
+                    throw new ArgumentException(EXCEPTION_MESSAGE_INCORRECT_PARAMETERS);
             }
             long offset = System.Convert.ToInt64(args.ElementAt(PARAMETERS_INDEX_OFFSET));
             if (args.Count() > 3)

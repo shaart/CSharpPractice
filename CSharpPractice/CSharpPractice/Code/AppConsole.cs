@@ -16,34 +16,16 @@ namespace CSharpPractice.Code
         private static Dictionary<string, Action<IEnumerable<string>>>
             commands = new Dictionary<string, Action<IEnumerable<string>>>()
         {
-            { "hello", RunCommand(() => Console.WriteLine("Hello, user!")) },
-            { "exit", RunCommand( () => {
+            { "hello", RunSimpleCommand( () => 
+                Console.WriteLine("Hello, user!")) },
+            { "exit", RunSimpleCommand( () => {
                 Console.WriteLine("Bye, user!");
                 App.Current.Shutdown(); }) },
-            { "caesar", Encryption.Caesar.Execute }
+            { "encrypt", Encryption.Encryption.Encrypt },
+            { "decrypt", Encryption.Encryption.Decrypt }
         };
 
-        /// <summary>
-        /// Run command. Usage example: RunCommand(() => Console.WriteLine("Hello!"))
-        /// </summary>
-        /// <param name="a">Delegate action | Example: () => Console.WriteLine("Hello, user!")</param>
-        /// <returns></returns>
-        private static Action<IEnumerable<string>> RunCommand(Action a)
-        {
-            return args =>
-            {
-                if (args.Any())
-                    throw new ArgumentException("This command doesn't support args");
-                a();
-            };
-        }
-
-        private static IEnumerable<string> SplitIntoTokens(string input)
-        {
-            return input.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
-        }
-
-        public static void ProcessInput(string input)
+        public static void RunCommand(string input)
         {
             Console.WriteLine('>' + input);
 
@@ -58,13 +40,34 @@ namespace CSharpPractice.Code
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Execution failed: " + e.Message);
+                    Console.WriteLine("Execution failed: {0}", e.Message);
                 }
             }
             else
             {
-                Console.WriteLine("Unrecognized command: " + command);
+                Console.WriteLine("Unrecognized command: {0}", command);
             }
+        }
+
+        /// <summary>
+        /// Run command without arguments
+        /// </summary>
+        /// <param name="a">Delegate action</param>
+        /// <example>() => Console.WriteLine("Hello, user!")</example>
+        /// <returns></returns>
+        private static Action<IEnumerable<string>> RunSimpleCommand(Action a)
+        {
+            return args =>
+            {
+                if (args.Any())
+                    throw new ArgumentException("This command doesn't support args");
+                a();
+            };
+        }
+
+        private static IEnumerable<string> SplitIntoTokens(string input)
+        {
+            return input.Split(null as char[], StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }
