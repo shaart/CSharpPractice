@@ -11,6 +11,15 @@ namespace CSharpPractice.Code
     public static class AppConsole
     {
         /// <summary>
+        /// "help"
+        /// </summary>
+        public const string COMMAND_HELP = "help";
+        /// <summary>
+        /// "/?"
+        /// </summary>
+        public const string COMMAND_HELP_ARG = "/?";
+
+        /// <summary>
         /// Commands dictionary
         /// </summary>
         private static Dictionary<string, Action<IEnumerable<string>>>
@@ -21,8 +30,10 @@ namespace CSharpPractice.Code
             { "exit", RunSimpleCommand( () => {
                 Console.WriteLine("Bye, user!");
                 App.Current.Shutdown(); }) },
+            // Encryption
             { "encrypt", Encryption.Encryption.Encrypt },
             { "enc", Encryption.Encryption.Encrypt },
+            // Decryption
             { "decrypt", Encryption.Encryption.Decrypt },
             { "dec", Encryption.Encryption.Decrypt }
         };

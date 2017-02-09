@@ -32,7 +32,7 @@ namespace CSharpPractice.Code.Encryption
         {
             string alg = args.FirstOrDefault();
             if (alg == null) { return; }
-            string algKey = string.Format("{0} {1}", process, alg);
+            string algKey = string.Format("{0}{1}{2}", process, " ", alg);
             if (algorithms.ContainsKey(algKey))
             {
                 try
