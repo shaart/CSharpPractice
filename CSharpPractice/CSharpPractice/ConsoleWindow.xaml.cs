@@ -4,9 +4,6 @@ using System.IO;
 
 namespace CSharpPractice
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class ConsoleWindow : Window
     {
         // Это наш специальный класс TextWriter
