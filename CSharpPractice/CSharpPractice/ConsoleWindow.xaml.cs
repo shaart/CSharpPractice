@@ -30,5 +30,10 @@ namespace CSharpPractice
         {
             _Console.ScrollToEnd();
         }
+
+        private void ConsoleWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            _Input.Focus();
+        }
     }
 }
