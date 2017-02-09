@@ -63,8 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Code\Encryption\EncryptionAlg.cs" />
-    <Compile Include="Code\Encryption\IEncryptionAlg.cs" />
+    <Compile Include="Code\Encryption\Encryption.cs" />
     <Compile Include="Code\AppConsole.cs" />
     <Compile Include="Code\Encryption\Caesar.cs" />
     <Compile Include="Code\TextBoxStreamWriter.cs" />
