@@ -25,7 +25,7 @@ namespace CSharpPractice.Code
         private static Dictionary<string, Action<IEnumerable<string>>>
             commands = new Dictionary<string, Action<IEnumerable<string>>>()
         {
-            { "hello", RunSimpleCommand( () => 
+            { "hello", RunSimpleCommand( () =>
                 Console.WriteLine("Hello, user!")) },
             { "exit", RunSimpleCommand( () => {
                 Console.WriteLine("Bye, user!");
@@ -35,13 +35,16 @@ namespace CSharpPractice.Code
             { "enc", Encryption.Encryption.Encrypt },
             // Decryption
             { "decrypt", Encryption.Encryption.Decrypt },
-            { "dec", Encryption.Encryption.Decrypt }
+            { "dec", Encryption.Encryption.Decrypt },
+            // File generation
+            { "generate", Files.FileGenerator.Generation },
+            { "gen", Files.FileGenerator.Generation }
         };
 
         public static void RunCommand(string input)
         {
             Console.WriteLine('>' + input);
-            
+
             IEnumerable<string> tokens = SplitIntoTokens(input);
             string command = tokens.FirstOrDefault();
             if (command == null) { return; }

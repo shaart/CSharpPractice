@@ -66,6 +66,7 @@
     <Compile Include="Code\Encryption\Encryption.cs" />
     <Compile Include="Code\AppConsole.cs" />
     <Compile Include="Code\Encryption\Caesar.cs" />
+    <Compile Include="Code\Files\FileGenerator.cs" />
     <Compile Include="Code\TextBoxStreamWriter.cs" />
     <Compile Include="ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
@@ -99,7 +100,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Code\Sorting\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
