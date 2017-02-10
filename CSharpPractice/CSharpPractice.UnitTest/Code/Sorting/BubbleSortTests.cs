@@ -11,6 +11,7 @@ namespace CSharpPractice.Code.Sorting.Tests
     [TestClass()]
     public class BubbleSortTests
     {
+        #region INT TEST
         [TestMethod()]
         public void SortTest_Int_Ascending()
         {
@@ -48,7 +49,9 @@ namespace CSharpPractice.Code.Sorting.Tests
             }
             Assert.IsTrue(successfulSorting);
         }
+        #endregion
 
+        #region DOUBLE TEST
         [TestMethod()]
         public void SortTest_Double_Ascending()
         {
@@ -86,5 +89,6 @@ namespace CSharpPractice.Code.Sorting.Tests
             }
             Assert.IsTrue(successfulSorting);
         }
+        #endregion
     }
 }
