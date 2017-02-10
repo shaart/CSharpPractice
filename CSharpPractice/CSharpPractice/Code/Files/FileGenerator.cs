@@ -9,6 +9,19 @@ namespace CSharpPractice.Code.Files
 {
     static class FileGenerator
     {
+        /// <summary>
+        /// Command usage and parameters information
+        /// </summary>
+        public const string CommandUsageInfo =
+            // 4 params:                       0                1             2               3
+            "Command usage: (gen)erate [output_file.<ext>] [canRewrite] [elements_count] [separator]\n" +
+            "Parameters: \n" +
+            "   [output_file.<ext>]     Output file path with file extension. Example: t.txt.\n" +
+            "   [canRewrite]            'true' or 'false' - can rewrite file is exists.\n" +
+            "   elements_count          Number of generating elements\n" +
+            "   separator               Optional parameter. Separator between elements.\n" +
+            "                           Default: \" \" (space).\n";
+
         public enum OperationResult { Completed, AbortedByCondition, Failed };
 
         private static void ShowElapsedTime(Stopwatch timer)
@@ -22,6 +35,14 @@ namespace CSharpPractice.Code.Files
         /// <param name="args">filename | canRewrite | arrayLength | (optional) serapator</param>
         public static void Generation(IEnumerable<string> args)
         {
+            if ((args.Count() == 0) ||
+                (args.FirstOrDefault() == Code.AppConsole.COMMAND_HELP) || 
+                (args.FirstOrDefault() == Code.AppConsole.COMMAND_HELP_ARG))
+            {
+                Console.WriteLine(CommandUsageInfo);
+                return;
+            }
+
             try
             {
                 string separator = args.ElementAtOrDefault(3);
