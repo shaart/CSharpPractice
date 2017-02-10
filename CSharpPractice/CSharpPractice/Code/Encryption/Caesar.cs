@@ -3,6 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+
+[assembly: InternalsVisibleToAttribute("CSharpPractice.UnitTest")]
 
 namespace CSharpPractice.Code.Encryption
 {
@@ -140,7 +143,7 @@ namespace CSharpPractice.Code.Encryption
         /// <param name="offer"></param>
         /// <param name="inputFile"></param>
         /// <param name="outputFile"></param>
-        private static char Encrypt(char symbol, long offset)
+        internal static char Encrypt(char symbol, long offset)
         {
             return (char)((int)symbol + offset);
         }
@@ -151,7 +154,7 @@ namespace CSharpPractice.Code.Encryption
         /// <param name="offer"></param>
         /// <param name="inputFile"></param>
         /// <param name="outputFile"></param>
-        private static char Decrypt(char symbol, long offset)
+        internal static char Decrypt(char symbol, long offset)
         {
             return (char)((int)symbol - offset);
         }

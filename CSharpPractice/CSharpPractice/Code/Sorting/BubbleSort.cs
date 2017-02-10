@@ -1,5 +1,4 @@
 ﻿using System;
-using CSharpPractice.Code.Sorting;
 
 namespace CSharpPractice.Code.Sorting
 {

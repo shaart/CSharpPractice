@@ -9,8 +9,9 @@ using System.Threading.Tasks;
 namespace CSharpPractice.Code.Sorting.Tests
 {
     [TestClass()]
-    public class TemplateComparerTests
+    public class MethodsTests
     {
+        #region IsFirstBigger()
         [TestMethod()]
         public void IsFirstBiggerTest_Int_FirstSmaller()
         {
@@ -60,7 +61,9 @@ namespace CSharpPractice.Code.Sorting.Tests
             bool result = Methods.IsFirstBigger(bigger, smaller);
             Assert.AreEqual(result, false);
         }
+        #endregion
 
+        #region Swap()
         [TestMethod()]
         public void SwapTest_Common()
         {
@@ -90,5 +93,6 @@ namespace CSharpPractice.Code.Sorting.Tests
             Methods.Swap(ref e1, ref e2);
             Assert.IsTrue((e1 == DEFAULT) && (e2 == DEFAULT));
         }
+        #endregion
     }
 }
