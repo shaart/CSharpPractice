@@ -7,14 +7,9 @@ using System.Collections.Generic;
 
 namespace CSharpPractice.Code.Sorting
 {
-    static class BubbleSort
+    public static class BubbleSort
     {
         public enum SortingOrder { Ascending, Descending  }
-
-        private static bool IsFirstBigger<T>(T e1, T e2)
-        {
-            return (Comparer<T>.Default.Compare(e1, e2) >= 0);
-        }
 
         public static void Sort<T>(ref T[] a, SortingOrder order) where T : IComparable
         {
@@ -26,7 +21,7 @@ namespace CSharpPractice.Code.Sorting
                     switch (order)
                     {
                         case SortingOrder.Ascending:
-                            if (a[j].CompareTo(a[i]) >= 0)
+                            if (TemplateComparer.IsFirstBigger(a[j], a[i]))
                             {
                                 dump = a[j];
                                 a[j] = a[i];
@@ -34,7 +29,7 @@ namespace CSharpPractice.Code.Sorting
                             }
                             break;
                         case SortingOrder.Descending:
-                            if (a[j] > a[i])
+                            if (TemplateComparer.IsFirstBigger(a[j], a[i]))
                             {
                                 dump = a[j];
                                 a[j] = a[i];

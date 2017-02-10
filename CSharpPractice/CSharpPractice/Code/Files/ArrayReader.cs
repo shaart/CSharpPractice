@@ -7,7 +7,7 @@ using System.IO;
 
 namespace CSharpPractice.Code.Files
 {
-    static class ArrayReader
+    public static class ArrayReader
     {
         public static int[] ReadFromFileTxt(string filename)
         {
