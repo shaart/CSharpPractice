@@ -5,7 +5,7 @@ using System.Linq;
 namespace CSharpPractice.Code
 {
     // Консоль в C# - Обработчик команд
-    // http://ru.stackoverflow.com/questions/203720/%D0%9A%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D1%8C-%D0%B2-c-%D0%9E%D0%B1%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4
+    // http://ru.stackoverflow.com/questions/203720/Консоль-в-c-Обработчик-команд
     // Cross Reference: getline.cs      xref: /mono/mcs/tools/csharp/getline.cs
     // http://code.metager.de/source/xref/mono/mcs/tools/csharp/getline.cs
     public static class AppConsole
