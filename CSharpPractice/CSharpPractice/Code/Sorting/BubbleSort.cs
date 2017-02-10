@@ -1,39 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Collections.Generic;
+using CSharpPractice.Code.Sorting;
 
 namespace CSharpPractice.Code.Sorting
 {
     public static class BubbleSort
     {
-        public enum SortingOrder { Ascending, Descending  }
-
         public static void Sort<T>(ref T[] a, SortingOrder order) where T : IComparable
         {
-            T dump;
-            for (int i = 0; i < a.Length; i++)
+            for (int outC = 0; outC < a.Length - 1; outC++)
             {
-                for (int j = 0; j < a.Length; j++)
+                for (int inC = 0; inC < a.Length - 1 - outC; inC++)
                 {
                     switch (order)
                     {
                         case SortingOrder.Ascending:
-                            if (TemplateComparer.IsFirstBigger(a[j], a[i]))
+                            if (Methods.IsFirstBigger(a[inC], a[inC + 1]))
                             {
-                                dump = a[j];
-                                a[j] = a[i];
-                                a[i] = dump;
+                                Sorting.Methods.Swap(ref a[inC], ref a[inC + 1]);
                             }
                             break;
                         case SortingOrder.Descending:
-                            if (TemplateComparer.IsFirstBigger(a[j], a[i]))
+                            if (!Methods.IsFirstBigger(a[inC], a[inC + 1]))
                             {
-                                dump = a[j];
-                                a[j] = a[i];
-                                a[i] = dump;
+                                Sorting.Methods.Swap(ref a[inC], ref a[inC + 1]);
                             }
                             break;
                         default:
