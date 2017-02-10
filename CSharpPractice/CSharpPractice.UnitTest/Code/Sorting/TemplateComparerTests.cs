@@ -15,7 +15,7 @@ namespace CSharpPractice.Code.Sorting.Tests
         public void IsFirstBiggerTest_Int_FirstSmaller()
         {
             int smaller = 5, bigger = 10;
-            bool result = TemplateComparer.IsFirstBigger(smaller, bigger);
+            bool result = Methods.IsFirstBigger(smaller, bigger);
             Assert.AreEqual(result, false);
         }
 
@@ -23,7 +23,7 @@ namespace CSharpPractice.Code.Sorting.Tests
         public void IsFirstBiggerTest_Int_FirstBigger()
         {
             int smaller = 5, bigger = 10;
-            bool result = TemplateComparer.IsFirstBigger(bigger, smaller);
+            bool result = Methods.IsFirstBigger(bigger, smaller);
             Assert.AreEqual(result, true);
         }
 
@@ -32,7 +32,7 @@ namespace CSharpPractice.Code.Sorting.Tests
         {
             int smaller, bigger;
             smaller = bigger = 5;
-            bool result = TemplateComparer.IsFirstBigger(bigger, smaller);
+            bool result = Methods.IsFirstBigger(bigger, smaller);
             Assert.AreEqual(result, false);
         }
 
@@ -40,7 +40,7 @@ namespace CSharpPractice.Code.Sorting.Tests
         public void IsFirstBiggerTest_Double_FirstSmaller()
         {
             double smaller = 5, bigger = 10;
-            bool result = TemplateComparer.IsFirstBigger(smaller, bigger);
+            bool result = Methods.IsFirstBigger(smaller, bigger);
             Assert.AreEqual(result, false);
         }
 
@@ -48,7 +48,7 @@ namespace CSharpPractice.Code.Sorting.Tests
         public void IsFirstBiggerTest_Double_FirstBigger()
         {
             double smaller = 5, bigger = 10;
-            bool result = TemplateComparer.IsFirstBigger(bigger, smaller);
+            bool result = Methods.IsFirstBigger(bigger, smaller);
             Assert.AreEqual(result, true);
         }
 
@@ -57,8 +57,38 @@ namespace CSharpPractice.Code.Sorting.Tests
         {
             double smaller, bigger;
             smaller = bigger = 5;
-            bool result = TemplateComparer.IsFirstBigger(bigger, smaller);
+            bool result = Methods.IsFirstBigger(bigger, smaller);
             Assert.AreEqual(result, false);
+        }
+
+        [TestMethod()]
+        public void SwapTest_Common()
+        {
+            const int FIRST = 1, SECOND = 2;
+            int e1 = FIRST, e2 = SECOND;
+            Methods.Swap(ref e1, ref e2);
+            Assert.IsTrue((e1 == SECOND) && (e2 == FIRST));
+        }
+
+        [TestMethod()]
+        public void SwapTest_OneNull()
+        {
+            const int SECOND = 2;
+
+            int? e1 = null;
+            int? e2 = SECOND;
+
+            Methods.Swap(ref e1, ref e2);
+            Assert.IsTrue((e1 == SECOND) && (e2 == null));
+        }
+
+        [TestMethod()]
+        public void SwapTest_TwoNull()
+        {
+            const object DEFAULT = null;
+            object e1 = null, e2 = null;
+            Methods.Swap(ref e1, ref e2);
+            Assert.IsTrue((e1 == DEFAULT) && (e2 == DEFAULT));
         }
     }
 }
