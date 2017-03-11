@@ -1,93 +1,105 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CSharpPractice.Code.Sorting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using CSharpPractice.UnitTest.Code.Sorting;
 
 namespace CSharpPractice.Code.Sorting.Tests
 {
     [TestClass()]
     public class BubbleSortTests
     {
+        const string CATEGORY = "Bubble sorting";
+
+        #region Exception Test
+        [TestMethod()]
+        [TestCategory(CATEGORY)]
+        [ExpectedException(typeof(ArgumentException), "Unknown sorting order")]
+        public void Sort_Unknown_Order()
+        {
+            int[] a = new int[] { 1, 2, 10, 3, 5, 4, 8, 7, 9, 0, 6 };
+
+            BubbleSort.Sort(ref a, (SortingOrder)int.MaxValue);
+
+            Assert.Fail();           
+        }
+        #endregion
+
         #region INT TEST
         [TestMethod()]
-        public void SortTest_Int_Ascending()
+        [TestCategory(CATEGORY)]
+        public void Sort_Int_Ascending()
         {
-            int[] sorted = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-            int[]      a = new int[] { 1, 2, 10, 3, 5, 4, 8, 7, 9, 0, 6 };
-            BubbleSort.Sort(ref a, SortingOrder.Ascending);
+            int[] sorted = SortingTestData.GetIntSortedAscend();
+            int[] a      = SortingTestData.GetIntUnsortedArray();
 
-            bool successfulSorting = true;
+            BubbleSort.Sort(ref a, SortingOrder.Ascending);
+            
             for (int i = 0; i < a.Length; i++)
             {
-                if (a[i] != sorted[i])
-                {
-                    successfulSorting = false;
-                    break;
-                }
+                Assert.AreEqual(sorted[i], a[i]);
             }
-            Assert.IsTrue(successfulSorting);
         }
 
         [TestMethod()]
-        public void SortTest_Int_Descending()
+        [TestCategory(CATEGORY)]
+        public void Sort_Int_Descending()
         {
-            int[] sorted = new int[] { 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0 };
-            int[]      a = new int[] { 1, 2, 10, 3, 5, 4, 8, 7, 9, 0, 6 };
-            BubbleSort.Sort(ref a, SortingOrder.Descending);
+            int[] sorted = SortingTestData.GetIntSortedDescend();
+            int[]      a = SortingTestData.GetIntUnsortedArray();
 
-            bool successfulSorting = true;
+            BubbleSort.Sort(ref a, SortingOrder.Descending);
+            
             for (int i = 0; i < a.Length; i++)
             {
-                if (a[i] != sorted[i])
-                {
-                    successfulSorting = false;
-                    break;
-                }
+                Assert.AreEqual(sorted[i], a[i]);
             }
-            Assert.IsTrue(successfulSorting);
+        }
+
+        [TestMethod()]
+        [TestCategory(CATEGORY)]
+        public void Sort_Blank_Int_Descending()
+        {
+            int[] sorted = SortingTestData.GetIntBlankArray();
+            int[] a      = SortingTestData.GetIntBlankArray();
+
+            BubbleSort.Sort(ref a, SortingOrder.Descending);
+            
+            for (int i = 0; i < a.Length; i++)
+            {
+                Assert.AreEqual(sorted[i], a[i]);
+            }
         }
         #endregion
 
         #region DOUBLE TEST
         [TestMethod()]
-        public void SortTest_Double_Ascending()
+        [TestCategory(CATEGORY)]
+        public void Sort_Double_Ascending()
         {
-            double[] sorted = new double[] { 0.0001, 0.001, 0.01, 0.1, 0.2, 1.0 };
-            double[] a = new double[] { 0.1, 0.0001, 0.2, 0.001, 1.0, 0.01 };
-            BubbleSort.Sort(ref a, SortingOrder.Ascending);
+            double[] sorted = SortingTestData.GetDoubleSortedAscend();
+            double[] a = SortingTestData.GetDoubleUnsortedArray();
 
-            bool successfulSorting = true;
+            BubbleSort.Sort(ref a, SortingOrder.Ascending);
+            
             for (int i = 0; i < a.Length; i++)
             {
-                if (a[i] != sorted[i])
-                {
-                    successfulSorting = false;
-                    break;
-                }
+                Assert.AreEqual(sorted[i], a[i]);
             }
-            Assert.IsTrue(successfulSorting);
         }
 
         [TestMethod()]
-        public void SortTest_Double_Descending()
+        [TestCategory(CATEGORY)]
+        public void Sort_Double_Descending()
         {
-            double[] sorted = new double[] { 1.0, 0.2, 0.1, 0.01, 0.001, 0.0001 };
-            double[] a = new double[] { 0.1, 0.0001, 0.2, 0.001, 1.0, 0.01 };
-            BubbleSort.Sort(ref a, SortingOrder.Descending);
+            double[] sorted = SortingTestData.GetDoubleSortedDescend();
+            double[] a = SortingTestData.GetDoubleUnsortedArray();
 
-            bool successfulSorting = true;
+            BubbleSort.Sort(ref a, SortingOrder.Descending);
+            
             for (int i = 0; i < a.Length; i++)
             {
-                if (a[i] != sorted[i])
-                {
-                    successfulSorting = false;
-                    break;
-                }
+                Assert.AreEqual(sorted[i], a[i]);
             }
-            Assert.IsTrue(successfulSorting);
         }
         #endregion
     }
