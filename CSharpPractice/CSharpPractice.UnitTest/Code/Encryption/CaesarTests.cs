@@ -11,8 +11,11 @@ namespace CSharpPractice.Code.Encryption.Tests
     [TestClass()]
     public class CaesarTests
     {
+        const string CATEGORY = "Encryption Caesar";
+
         [TestMethod()]
-        public void EncryptTest()
+        [TestCategory(CATEGORY)]
+        public void Encrypt_Symbol()
         {
             char result = Caesar.Encrypt('б', 1);
             Assert.AreEqual(result, 'в');
@@ -25,7 +28,8 @@ namespace CSharpPractice.Code.Encryption.Tests
         }
 
         [TestMethod()]
-        public void DecryptTest()
+        [TestCategory(CATEGORY)]
+        public void Decrypt_Symbol()
         {
             char result = Caesar.Decrypt('в', 1);
             Assert.AreEqual(result, 'б');
