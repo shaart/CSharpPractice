@@ -11,9 +11,12 @@ namespace CSharpPractice.Code.Sorting.Tests
     [TestClass()]
     public class MethodsTests
     {
+        const string CATEGORY = "Sorting methods";
+
         #region IsFirstBigger()
         [TestMethod()]
-        public void IsFirstBiggerTest_Int_FirstSmaller()
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_Int_FirstSmaller()
         {
             int smaller = 5, bigger = 10;
             bool result = Methods.IsFirstBigger(smaller, bigger);
@@ -21,7 +24,8 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void IsFirstBiggerTest_Int_FirstBigger()
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_Int_FirstBigger()
         {
             int smaller = 5, bigger = 10;
             bool result = Methods.IsFirstBigger(bigger, smaller);
@@ -29,7 +33,8 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void IsFirstBiggerTest_Int_AreEquals()
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_Int_AreEquals()
         {
             int smaller, bigger;
             smaller = bigger = 5;
@@ -38,7 +43,8 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void IsFirstBiggerTest_Double_FirstSmaller()
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_Double_FirstSmaller()
         {
             double smaller = 5, bigger = 10;
             bool result = Methods.IsFirstBigger(smaller, bigger);
@@ -46,7 +52,8 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void IsFirstBiggerTest_Double_FirstBigger()
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_Double_FirstBigger()
         {
             double smaller = 5, bigger = 10;
             bool result = Methods.IsFirstBigger(bigger, smaller);
@@ -54,18 +61,38 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void IsFirstBiggerTest_Double_AreEquals()
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_Double_AreEquals()
         {
             double smaller, bigger;
             smaller = bigger = 5;
             bool result = Methods.IsFirstBigger(bigger, smaller);
             Assert.AreEqual(result, false);
         }
+
+        [TestMethod()]
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_TwoNulls_NotBigger()
+        {
+            object smaller = null, bigger = null;
+            bool result = Methods.IsFirstBigger(bigger, smaller);
+            Assert.AreEqual(result, false);
+        }
+
+        [TestMethod()]
+        [TestCategory(CATEGORY)]
+        public void IsFirstBigger_NullAndInt_IntBigger()
+        {
+            object smaller = null, bigger = 5;
+            bool result = Methods.IsFirstBigger(bigger, smaller);
+            Assert.AreEqual(result, true);
+        }
         #endregion
 
         #region Swap()
         [TestMethod()]
-        public void SwapTest_Common()
+        [TestCategory(CATEGORY)]
+        public void Swap_Common()
         {
             const int FIRST = 1, SECOND = 2;
             int e1 = FIRST, e2 = SECOND;
@@ -74,7 +101,8 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void SwapTest_OneNull()
+        [TestCategory(CATEGORY)]
+        public void Swap_OneNull()
         {
             const int SECOND = 2;
 
@@ -86,7 +114,8 @@ namespace CSharpPractice.Code.Sorting.Tests
         }
 
         [TestMethod()]
-        public void SwapTest_TwoNull()
+        [TestCategory(CATEGORY)]
+        public void Swap_TwoNull()
         {
             const object DEFAULT = null;
             object e1 = null, e2 = null;
