@@ -53,6 +53,7 @@
     <Compile Include="Code\Encryption\CaesarTests.cs" />
     <Compile Include="Code\Sorting\BubbleSortTests.cs" />
     <Compile Include="Code\Sorting\MethodsTests.cs" />
+    <Compile Include="Code\Sorting\SortingTestData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
