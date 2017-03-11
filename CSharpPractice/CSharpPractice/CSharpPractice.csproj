@@ -71,6 +71,7 @@
     <Compile Include="Code\Sorting\BubbleSort.cs" />
     <Compile Include="Code\Sorting\General.cs" />
     <Compile Include="Code\Sorting\Methods.cs" />
+    <Compile Include="Code\Sorting\QuickSort.cs" />
     <Compile Include="Code\TextBoxStreamWriter.cs" />
     <Compile Include="ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
