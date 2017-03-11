@@ -4,9 +4,6 @@ using System.IO;
 
 namespace CSharpPractice
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class ConsoleWindow : Window
     {
         // Это наш специальный класс TextWriter
@@ -22,13 +19,18 @@ namespace CSharpPractice
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            Code.AppConsole.ProcessInput(_Input.Text);
+            Code.AppConsole.RunCommand(_Input.Text);
             _Input.Text = "";
         }
 
         private void _Console_TextChanged(object sender, TextChangedEventArgs e)
         {
             _Console.ScrollToEnd();
+        }
+
+        private void ConsoleWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            _Input.Focus();
         }
     }
 }

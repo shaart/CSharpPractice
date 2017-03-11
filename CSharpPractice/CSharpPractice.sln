@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice", "ISaPI\CSharpPractice.csproj", "{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice", "CSharpPractice\CSharpPractice.csproj", "{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice.UnitTest", "CSharpPractice.UnitTest\CSharpPractice.UnitTest.csproj", "{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D} = {9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

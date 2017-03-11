@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CSharpPractice"
         mc:Ignorable="d"
-        Title="Shaarty ISaPI Console" Height="350" Width="525">
+        Title="Shaarty C# Practice Console" Height="350" Width="525" Loaded="ConsoleWindow_Loaded">
     <Grid>
         <TextBox x:Name="_Console"  Margin="5,5,5,40" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" VerticalScrollBarVisibility="Auto" IsUndoEnabled="False" TextChanged="_Console_TextChanged"/>
         <TextBox x:Name="_Input" Margin="5,5,55,5" Height="30" 

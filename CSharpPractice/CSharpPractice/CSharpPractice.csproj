@@ -63,10 +63,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Code\Encryption\EncryptionAlg.cs" />
-    <Compile Include="Code\Encryption\IEncryptionAlg.cs" />
+    <Compile Include="Code\Encryption\Encryption.cs" />
     <Compile Include="Code\AppConsole.cs" />
     <Compile Include="Code\Encryption\Caesar.cs" />
+    <Compile Include="Code\Files\ArrayReader.cs" />
+    <Compile Include="Code\Files\FileGenerator.cs" />
+    <Compile Include="Code\Sorting\BubbleSort.cs" />
+    <Compile Include="Code\Sorting\General.cs" />
+    <Compile Include="Code\Sorting\Methods.cs" />
     <Compile Include="Code\TextBoxStreamWriter.cs" />
     <Compile Include="ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
