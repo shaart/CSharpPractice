@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CSharpPractice.PluginContracts;
 
-namespace CSharpPractice.Code
+namespace CSharpPractice
 {
     // Консоль в C# - Обработчик команд
     // http://ru.stackoverflow.com/questions/203720/Консоль-в-c-Обработчик-команд
     // Cross Reference: getline.cs      xref: /mono/mcs/tools/csharp/getline.cs
     // http://code.metager.de/source/xref/mono/mcs/tools/csharp/getline.cs
+    // Design patterns for console commands
+    // https://codereview.stackexchange.com/questions/105675/design-patterns-for-console-commands
     public static class AppConsole
     {
         /// <summary>
@@ -29,16 +32,16 @@ namespace CSharpPractice.Code
                 Console.WriteLine("Hello, user!")) },
             { "exit", RunSimpleCommand( () => {
                 Console.WriteLine("Bye, user!");
-                App.Current.Shutdown(); }) },
-            // Encryption
-            { "encrypt", Encryption.Encryption.Encrypt },
-            { "enc", Encryption.Encryption.Encrypt },
-            // Decryption
-            { "decrypt", Encryption.Encryption.Decrypt },
-            { "dec", Encryption.Encryption.Decrypt },
-            // File generation
-            { "generate", Files.FileGenerator.Generation },
-            { "gen", Files.FileGenerator.Generation }
+                App.Current.Shutdown(); }) }//,
+            //// Encryption
+            //{ "encrypt", Encryption.Encryption.Encrypt },
+            //{ "enc", Encryption.Encryption.Encrypt },
+            //// Decryption
+            //{ "decrypt", Encryption.Encryption.Decrypt },
+            //{ "dec", Encryption.Encryption.Decrypt },
+            //// File generation
+            //{ "generate", Files.FileGenerator.Generation },
+            //{ "gen", Files.FileGenerator.Generation }
         };
 
         public static void RunCommand(string input)

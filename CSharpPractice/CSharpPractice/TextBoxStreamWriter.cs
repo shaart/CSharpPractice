@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Controls;
 
-namespace CSharpPractice.Code
+namespace CSharpPractice
 {
     public class TextBoxStreamWriter : TextWriter
     {
