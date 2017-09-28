@@ -66,8 +66,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Code\Encryption\Encryption.cs" />
-    <Compile Include="Code\Encryption\Caesar.cs" />
     <Compile Include="AppConsole.cs" />
     <Compile Include="GenericPluginLoader.cs" />
     <Compile Include="PluginLoader.cs" />

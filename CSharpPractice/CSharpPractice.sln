@@ -10,7 +10,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice.UnitTest", "
 		{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D} = {9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice-Encryption", "CSharpPractice-Encryption\CSharpPractice-Encryption.csproj", "{78D1A4FA-AF2E-4EBC-A4B3-D942008A94EC}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice-Sorting", "CSharpPractice-Sorting\CSharpPractice-Sorting.csproj", "{EF3DE8CB-7E31-4313-AC48-226F75A66E61}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice-Files", "CSharpPractice-Files\CSharpPractice-Files.csproj", "{BA0CD26D-075D-4316-AC3C-EBC40434DAD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice-PluginContracts", "PluginContracts\CSharpPractice-PluginContracts.csproj", "{E3C5D664-9FA2-4B5A-A143-256C8181ECAF}"
@@ -33,6 +36,7 @@ Global
 		{78D1A4FA-AF2E-4EBC-A4B3-D942008A94EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D1A4FA-AF2E-4EBC-A4B3-D942008A94EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D1A4FA-AF2E-4EBC-A4B3-D942008A94EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Release|Any CPU.Build.0 = Release|Any CPU

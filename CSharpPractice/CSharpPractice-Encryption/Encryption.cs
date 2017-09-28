@@ -4,7 +4,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CSharpPractice.Code.Encryption
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleToAttribute("CSharpPractice.UnitTest")]
+
+namespace CSharpPractice.Encryption
 {
     static class Encryption
     {
@@ -14,8 +17,8 @@ namespace CSharpPractice.Code.Encryption
         private static Dictionary<string, Action<IEnumerable<string>>>
             algorithms = new Dictionary<string, Action<IEnumerable<string>>>()
         {
-            { "encrypt caesar", Code.Encryption.Caesar.Encrypt },
-            { "decrypt caesar", Code.Encryption.Caesar.Decrypt }
+            { "encrypt caesar", Caesar.Encrypt },
+            { "decrypt caesar", Caesar.Decrypt }
         };
 
         public static void ShowArgs(IEnumerable<string> args)

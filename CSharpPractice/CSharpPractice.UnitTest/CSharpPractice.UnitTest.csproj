@@ -35,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CSharpPractice-Encryption">
+      <HintPath>..\CSharpPractice\bin\Debug\plugins\CSharpPractice-Encryption.dll</HintPath>
+    </Reference>
     <Reference Include="CSharpPractice-Files">
       <HintPath>..\CSharpPractice\bin\Debug\plugins\CSharpPractice-Files.dll</HintPath>
     </Reference>

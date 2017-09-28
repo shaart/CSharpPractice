@@ -7,11 +7,20 @@ using System.Runtime.CompilerServices;
 
 [assembly: InternalsVisibleToAttribute("CSharpPractice.UnitTest")]
 
-namespace CSharpPractice.Code.Encryption
+namespace CSharpPractice.Encryption
 {
     public static class Caesar
     {
         #region STRINGS
+        /// <summary>
+        /// "help"
+        /// </summary>
+        public const string COMMAND_HELP = "help";
+        /// <summary>
+        /// "/?"
+        /// </summary>
+        public const string COMMAND_HELP_ARG = "/?";
+
         /// <summary>
         /// Command usage and parameters information
         /// </summary>
@@ -54,7 +63,7 @@ namespace CSharpPractice.Code.Encryption
             }
             Console.Write('\n');
 #endif
-            if (args.FirstOrDefault() == AppConsole.COMMAND_HELP || args.FirstOrDefault() == AppConsole.COMMAND_HELP_ARG)
+            if (args.FirstOrDefault() == COMMAND_HELP || args.FirstOrDefault() == COMMAND_HELP_ARG)
             {
                 Console.WriteLine(CommandUsageInfo);
                 return false;

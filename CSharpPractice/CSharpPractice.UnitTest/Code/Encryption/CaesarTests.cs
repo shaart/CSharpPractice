@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSharpPractice.Code.Encryption;
+using CSharpPractice.Encryption;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpPractice.Code.Encryption.Tests
+namespace CSharpPractice.Encryption.Tests
 {
     [TestClass()]
     public class CaesarTests
