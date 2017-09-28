@@ -1,12 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using CSharpPractice.Code.Sorting;
+using CSharpPractice.Sorting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpPractice.Code.Sorting.Tests
+namespace CSharpPractice.Sorting.Tests
 {
     [TestClass()]
     public class BubbleSortTests
