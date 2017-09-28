@@ -68,8 +68,6 @@
     </Compile>
     <Compile Include="Code\Encryption\Encryption.cs" />
     <Compile Include="Code\Encryption\Caesar.cs" />
-    <Compile Include="Code\Files\ArrayReader.cs" />
-    <Compile Include="Code\Files\FileGenerator.cs" />
     <Compile Include="AppConsole.cs" />
     <Compile Include="GenericPluginLoader.cs" />
     <Compile Include="PluginLoader.cs" />
