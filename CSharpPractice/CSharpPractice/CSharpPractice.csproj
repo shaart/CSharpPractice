@@ -70,9 +70,6 @@
     <Compile Include="Code\Encryption\Caesar.cs" />
     <Compile Include="Code\Files\ArrayReader.cs" />
     <Compile Include="Code\Files\FileGenerator.cs" />
-    <Compile Include="Code\Sorting\BubbleSort.cs" />
-    <Compile Include="Code\Sorting\General.cs" />
-    <Compile Include="Code\Sorting\Methods.cs" />
     <Compile Include="AppConsole.cs" />
     <Compile Include="GenericPluginLoader.cs" />
     <Compile Include="PluginLoader.cs" />

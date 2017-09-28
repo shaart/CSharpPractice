@@ -1,6 +1,9 @@
 ﻿using System;
 
-namespace CSharpPractice.Code.Sorting
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleToAttribute("CSharpPractice.UnitTest")]
+
+namespace CSharpPractice.Sorting
 {
     public static class BubbleSort
     {

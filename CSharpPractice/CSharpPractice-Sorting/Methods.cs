@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
-namespace CSharpPractice.Code.Sorting
+[assembly: InternalsVisibleToAttribute("CSharpPractice.UnitTest")]
+
+namespace CSharpPractice.Sorting
 {
     public static class Methods
     {

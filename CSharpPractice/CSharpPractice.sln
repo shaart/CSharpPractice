@@ -10,6 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice.UnitTest", "
 		{9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D} = {9A6EC95E-3EC0-4EAE-90F3-6B5D498F284D}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice-Sorting", "CSharpPractice-Sorting\CSharpPractice-Sorting.csproj", "{EF3DE8CB-7E31-4313-AC48-226F75A66E61}"
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpPractice-PluginContracts", "PluginContracts\CSharpPractice-PluginContracts.csproj", "{E3C5D664-9FA2-4B5A-A143-256C8181ECAF}"
 EndProject
 Global
@@ -26,6 +27,9 @@ Global
 		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CCBC3C8-1B28-4B26-8C60-B24DF5FB7762}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3DE8CB-7E31-4313-AC48-226F75A66E61}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3C5D664-9FA2-4B5A-A143-256C8181ECAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3C5D664-9FA2-4B5A-A143-256C8181ECAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3C5D664-9FA2-4B5A-A143-256C8181ECAF}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharpPractice.Code.Sorting
+using System.Runtime.CompilerServices;
+[assembly: InternalsVisibleToAttribute("CSharpPractice.UnitTest")]
+
+namespace CSharpPractice.Sorting
 {
     public enum SortingOrder { Ascending, Descending }
 
