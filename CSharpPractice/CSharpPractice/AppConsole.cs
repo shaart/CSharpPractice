@@ -13,6 +13,8 @@ namespace CSharpPractice
     // https://codereview.stackexchange.com/questions/105675/design-patterns-for-console-commands
     public static class AppConsole
     {
+        public static Dictionary<string, IPlugin> _Plugins;
+
         /// <summary>
         /// "help"
         /// </summary>
@@ -21,6 +23,20 @@ namespace CSharpPractice
         /// "/?"
         /// </summary>
         public const string COMMAND_HELP_ARG = "/?";
+
+        public static void LoadPlugins(string path)
+        {
+            _Plugins = new Dictionary<string, IPlugin>();
+            //ICollection<IPlugin> plugins = PluginLoader.LoadPlugins("Plugins");
+            ICollection<IPlugin> plugins = GenericPluginLoader<IPlugin>.LoadFrom(path);
+            foreach (var plugin in plugins)
+            {
+                _Plugins.Add(plugin.Name, plugin);
+                commands.Add(plugin.Name, plugin.Do);
+
+                System.Console.WriteLine("Added plugin: {0}", plugin.Name);
+            }
+        }
 
         /// <summary>
         /// Commands dictionary

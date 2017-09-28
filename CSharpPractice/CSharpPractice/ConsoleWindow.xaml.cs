@@ -1,25 +1,26 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.IO;
+using System.Collections.Generic;
 
 namespace CSharpPractice
 {
     public partial class ConsoleWindow : Window
     {
-        // Это наш специальный класс TextWriter
         TextWriter _writer = null;
-        
+
         public ConsoleWindow()
         {
             InitializeComponent();
-
-            _writer = new Code.TextBoxStreamWriter(_Console);
+            
+            _writer = new TextBoxStreamWriter(_Console);
             System.Console.SetOut(_writer);
+            AppConsole.LoadPlugins("Plugins");
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
-            Code.AppConsole.RunCommand(_Input.Text);
+            AppConsole.RunCommand(_Input.Text);
             _Input.Text = "";
         }
 
