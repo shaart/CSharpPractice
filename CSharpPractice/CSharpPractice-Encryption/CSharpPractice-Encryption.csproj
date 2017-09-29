@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caesar.cs" />
+    <Compile Include="DecryptCommand.cs" />
+    <Compile Include="EncryptCommand.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="EncryptionPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

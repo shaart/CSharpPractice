@@ -3,23 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CSharpPractice.PluginContracts;
+using PluginContracts;
 
 namespace CSharpPractice.Encryption
 {
     public class EncryptionPlugin : IPlugin
     {
-        public string Name
+        public string Name { get { return "Encryption"; } }
+        public string Author { get { return "Shalaev Artur"; } }
+        public string Description { get { return "Encrypt and decrypt library"; } }
+        
+        public HashSet<ICommand> Commands
         {
             get
             {
-                return "encryption";
+                return new HashSet<ICommand>()
+                {
+                    new EncryptCommand(),
+                    new DecryptCommand()
+                };
             }
-        }
-
-        public void Do(IEnumerable<string> args)
-        {
-            Console.WriteLine("Encryption Plugin Do() called");
         }
     }
 }
