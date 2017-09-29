@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CSharpPractice.PluginContracts;
+using PluginContracts;
 
 namespace CSharpPractice
 {
@@ -32,23 +32,35 @@ namespace CSharpPractice
             foreach (var plugin in plugins)
             {
                 _Plugins.Add(plugin.Name, plugin);
-                commands.Add(plugin.Name, plugin.Do);
-
-                System.Console.WriteLine("Added plugin: {0}", plugin.Name);
+                System.Console.WriteLine("| Plugin '{0}' loading", plugin.Name);
+                if (plugin.Commands != null)
+                {
+                    foreach (var command in plugin.Commands)
+                    {
+                        if (commands != null)
+                        {
+                            commands.Add(command.Name, command);
+                            System.Console.WriteLine("Loaded command: {0}", command.Name);
+                        }
+                    }
+                }
             }
+            System.Console.WriteLine("| Plugins loaded\n");
         }
 
         /// <summary>
         /// Commands dictionary
         /// </summary>
-        private static Dictionary<string, Action<IEnumerable<string>>>
-            commands = new Dictionary<string, Action<IEnumerable<string>>>()
+        private static Dictionary<string, ICommand>
+            commands = new Dictionary<string, ICommand>()
         {
-            { "hello", RunSimpleCommand( () =>
-                Console.WriteLine("Hello, user!")) },
-            { "exit", RunSimpleCommand( () => {
+            { "hello", new Command("hello", (args) => {
+                Console.WriteLine("Hello, user!"); })
+            },
+            { "exit", new Command("exit", (args) => {
                 Console.WriteLine("Bye, user!");
-                App.Current.Shutdown(); }) }//,
+                App.Current.Shutdown(); })
+            }//,
             //// Encryption
             //{ "encrypt", Encryption.Encryption.Encrypt },
             //{ "enc", Encryption.Encryption.Encrypt },
@@ -67,11 +79,45 @@ namespace CSharpPractice
             IEnumerable<string> tokens = SplitIntoTokens(input);
             string command = tokens.FirstOrDefault();
             if (command == null) { return; }
-            if (commands.ContainsKey(command))
+            // help || /?
+            if (command == COMMAND_HELP)
             {
+                if (tokens.Count() < 2)
+                {
+                    foreach (var comPair in commands)
+                    {
+                        Console.WriteLine("{0}    {1}", comPair.Value.Name, comPair.Value.Description);
+                    }
+                }
+                else
+                {
+                    string currCommand = tokens.ElementAt(1);
+                    if (commands.ContainsKey(currCommand))
+                    {
+                        Console.WriteLine(commands[currCommand].CommandUsageInfo != "" ?
+                            commands[currCommand].CommandUsageInfo
+                            : "No description");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unrecognized command: {0}", currCommand);
+                    }
+                }
+            }
+            else if (commands.ContainsKey(command))
+            {
+                if (tokens.LastOrDefault() == COMMAND_HELP_ARG)
+                {
+                    Console.WriteLine(commands[command].CommandUsageInfo != "" ?
+                        commands[command].CommandUsageInfo 
+                        : "No description");
+
+                    return;
+                }
+
                 try
                 {
-                    commands[command](tokens.Skip(1));
+                    commands[command].Run(tokens.Skip(1));
                 }
                 catch (Exception e)
                 {

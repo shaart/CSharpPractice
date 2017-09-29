@@ -69,7 +69,6 @@
     </Compile>
     <Compile Include="AppConsole.cs" />
     <Compile Include="GenericPluginLoader.cs" />
-    <Compile Include="PluginLoader.cs" />
     <Compile Include="TextBoxStreamWriter.cs" />
     <Compile Include="ConsoleWindow.xaml.cs">
       <DependentUpon>ConsoleWindow.xaml</DependentUpon>
