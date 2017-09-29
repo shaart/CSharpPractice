@@ -41,8 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArrayReader.cs" />
+    <Compile Include="FilesPlugin.cs" />
     <Compile Include="FileGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PluginContracts\CSharpPractice-PluginContracts.csproj">
+      <Project>{E3C5D664-9FA2-4B5A-A143-256C8181ECAF}</Project>
+      <Name>CSharpPractice-PluginContracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
